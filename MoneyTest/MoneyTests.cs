@@ -13,7 +13,7 @@ namespace MoneyTest
         public void TestMultiplication()
         {
             var five = new Dollar(5);
-            five.times(2);
+            five.Times(2);
             Assert.AreEqual(10,five.Amount);
         }
     }
@@ -22,14 +22,14 @@ namespace MoneyTest
     {
         public Dollar(int amount)
         {
-            throw new System.NotImplementedException();
+            Amount = amount;
         }
 
         public double Amount { get; set; }
 
-        public void times(int multiplier)
+        public void Times(int multiplier)
         {
-            throw new System.NotImplementedException();
+            Amount *= multiplier;
         }
     }
 }
