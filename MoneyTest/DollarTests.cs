@@ -1,9 +1,10 @@
 using ExpectedObjects;
+using Money;
 using NUnit.Framework;
 
 namespace MoneyTest
 {
-    public class MoneysTest
+    public class DollarTests
     {
         [SetUp]
         public void Setup()
@@ -28,26 +29,6 @@ namespace MoneyTest
         {
             Assert.True(new Dollar(5).Equal(new Dollar(5)));
             Assert.False(new Dollar(5).Equal(new Dollar(6)));
-        }
-    }
-
-    public class Dollar
-    {
-        private double amount;
-
-        public Dollar(double amount)
-        {
-            this.amount = amount;
-        }
-
-        public Dollar Times(int multiplier)
-        {
-            return new(amount * multiplier);
-        }
-
-        public bool Equal(Dollar dollar)
-        {
-            return amount == dollar.amount;
         }
     }
 }
