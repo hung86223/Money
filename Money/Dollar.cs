@@ -1,9 +1,7 @@
 ﻿namespace Money
 {
-    public class Dollar
+    public class Dollar:MoneyBase
     {
-        private double amount;
-
         public Dollar(double amount)
         {
             this.amount = amount;
@@ -14,9 +12,5 @@
             return new(amount * multiplier);
         }
 
-        public bool Equal(Dollar dollar)
-        {
-            return amount == dollar.amount;
-        }
     }
 }

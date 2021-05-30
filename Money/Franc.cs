@@ -1,22 +1,17 @@
 ﻿namespace Money
 {
-    public class Franc
+    public class Franc:MoneyBase
     {
-        private int amount;
 
-        public Franc(int amount)
+        public Franc(double amount)
         {
             this.amount = amount;
         }
 
         public Franc Times(int multiplie)
         {
-            return new Franc(multiplie*amount);
+            return new (multiplie*amount);
         }
 
-        public bool Equal(Franc franc)
-        {
-            return amount == franc.amount;
-        }
     }
 }
