@@ -13,23 +13,25 @@ namespace MoneyTest
         public void TestMultiplication()
         {
             var five = new Dollar(5);
-            five.Times(2);
-            Assert.AreEqual(10,five.Amount);
+            var product = five.Times(2);
+            Assert.AreEqual(10,product.amount);
+            product = five.Times(3);
+            Assert.AreEqual(15,product.amount);
         }
     }
 
     public class Dollar
     {
-        public Dollar(int amount)
+        public double amount;
+
+        public Dollar(double amount)
         {
-            Amount = amount;
+            this.amount = amount;
         }
 
-        public double Amount { get; set; }
-
-        public void Times(int multiplier)
+        public Dollar Times(int multiplier)
         {
-            Amount *= multiplier;
+            return new(amount*multiplier);
         }
     }
 }
