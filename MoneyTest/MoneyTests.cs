@@ -15,7 +15,7 @@ namespace MoneyTest
         {
             var five = new Dollar(5);
             DollarShouldEqual(new Dollar(10), five.Times(2));
-            DollarShouldEqual(new Dollar(15),five.Times(3));
+            DollarShouldEqual(new Dollar(15), five.Times(3));
         }
 
         private void DollarShouldEqual(Dollar expected, Dollar product)
@@ -33,7 +33,7 @@ namespace MoneyTest
 
     public class Dollar
     {
-        public double amount;
+        private double amount;
 
         public Dollar(double amount)
         {
@@ -42,7 +42,7 @@ namespace MoneyTest
 
         public Dollar Times(int multiplier)
         {
-            return new(amount*multiplier);
+            return new(amount * multiplier);
         }
 
         public bool Equal(Dollar dollar)
