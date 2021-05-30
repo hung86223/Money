@@ -14,10 +14,13 @@ namespace MoneyTest
         public void TestMultiplication()
         {
             var five = new Dollar(5);
-            var product = five.Times(2);
-            product.ToExpectedObject().ShouldEqual(new Dollar(10));
-            product = five.Times(3);
-            product.ToExpectedObject().ShouldEqual(new Dollar(15));
+            DollarShouldEqual(new Dollar(10), five.Times(2));
+            DollarShouldEqual(new Dollar(15),five.Times(3));
+        }
+
+        private void DollarShouldEqual(Dollar expected, Dollar product)
+        {
+            expected.ToExpectedObject().ShouldEqual(product);
         }
 
         [Test]
