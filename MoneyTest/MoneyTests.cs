@@ -1,3 +1,4 @@
+using ExpectedObjects;
 using NUnit.Framework;
 
 namespace MoneyTest
@@ -14,9 +15,9 @@ namespace MoneyTest
         {
             var five = new Dollar(5);
             var product = five.Times(2);
-            Assert.AreEqual(10,product.amount);
+            product.ToExpectedObject().ShouldEqual(new Dollar(10));
             product = five.Times(3);
-            Assert.AreEqual(15,product.amount);
+            product.ToExpectedObject().ShouldEqual(new Dollar(15));
         }
 
         [Test]
