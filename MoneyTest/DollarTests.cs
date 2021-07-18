@@ -14,12 +14,12 @@ namespace MoneyTest
         [Test]
         public void TestMultiplication()
         {
-            var five = new Dollar(5);
-            DollarShouldEqual(new Dollar(10), five.Times(2));
-            DollarShouldEqual(new Dollar(15), five.Times(3));
+            var five = MoneyBase.Dollar(5);
+            DollarShouldEqual(MoneyBase.Dollar(10), five.Times(2));
+            DollarShouldEqual(MoneyBase.Dollar(15), five.Times(3));
         }
 
-        private void DollarShouldEqual(Dollar expected, Dollar product)
+        private void DollarShouldEqual(MoneyBase expected, MoneyBase product)
         {
             expected.ToExpectedObject().ShouldEqual(product);
         }

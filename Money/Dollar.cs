@@ -4,12 +4,12 @@
     {
         public Dollar(double amount)
         {
-            this.amount = amount;
+            Amount = amount;
         }
 
-        public Dollar Times(int multiplier)
+        public override Dollar Times(int multiplier)
         {
-            return new(amount * multiplier);
+            return new(Amount * multiplier);
         }
 
     }

@@ -5,12 +5,12 @@
 
         public Franc(double amount)
         {
-            this.amount = amount;
+            Amount = amount;
         }
 
-        public Franc Times(int multiplie)
+        public override MoneyBase Times(int multiplier)
         {
-            return new (multiplie*amount);
+            return new Franc(multiplier*Amount);
         }
 
     }

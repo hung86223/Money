@@ -10,17 +10,19 @@ namespace MoneyTest
         [Test]
         public void TestMultiplication()
         {
-            var franc = new Franc(5);
-            FrancShouldEqual(new Franc(10),franc.Times(2));
-            FrancShouldEqual(new Franc(15),franc.Times(3));
+            var franc = MoneyBase.Franc(5);
+            FrancShouldEqual(MoneyBase.Franc(10), franc.Times(2));
+            FrancShouldEqual(MoneyBase.Franc(15), franc.Times(3));
         }
- [Test]
+
+        [Test]
         public void TestEquality()
         {
             Assert.True(new Franc(5).Equal(new Franc(5)));
             Assert.False(new Franc(5).Equal(new Franc(6)));
         }
-        private void FrancShouldEqual(Franc expected, Franc product)
+
+        private void FrancShouldEqual(MoneyBase expected, MoneyBase product)
         {
             expected.ToExpectedObject().ShouldEqual(product);
         }
