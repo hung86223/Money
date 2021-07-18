@@ -2,15 +2,17 @@
 {
     public class Franc:MoneyBase
     {
+        private string Currency;
 
-        public Franc(double amount)
+        public Franc(int amount, string currency)
         {
+            Currency = currency;
             Amount = amount;
         }
 
         public override MoneyBase Times(int multiplier)
         {
-            return new Franc(multiplier*Amount);
+            return Franc(multiplier*Amount);
         }
 
     }

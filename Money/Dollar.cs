@@ -2,14 +2,16 @@
 {
     public class Dollar:MoneyBase
     {
-        public Dollar(double amount)
+        private string Currency;
+        public Dollar(int amount, string currency)
         {
+            Currency = currency;
             Amount = amount;
         }
 
-        public override Dollar Times(int multiplier)
+        public override MoneyBase Times(int multiplier)
         {
-            return new(Amount * multiplier);
+            return MoneyBase.Dollar(Amount * multiplier);
         }
 
     }

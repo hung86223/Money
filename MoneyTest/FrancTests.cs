@@ -18,9 +18,9 @@ namespace MoneyTest
         [Test]
         public void TestEquality()
         {
-            Assert.True(new Franc(5).Equal(new Franc(5)));
-            Assert.False(new Franc(5).Equal(new Franc(6)));
-            Assert.False(new Franc(5).Equal(new Dollar(5)));
+            Assert.True(MoneyBase.Franc(5).Equal(MoneyBase.Franc(5)));
+            Assert.False(MoneyBase.Franc(5).Equal(MoneyBase.Franc(6)));
+            Assert.False(MoneyBase.Franc(5).Equal(MoneyBase.Dollar(5)));
         }
 
         private void FrancShouldEqual(MoneyBase expected, MoneyBase product)

@@ -2,7 +2,7 @@
 {
     public abstract class MoneyBase
     {
-        protected double Amount;
+        protected int Amount;
 
         public bool Equal(MoneyBase money)
         {
@@ -11,12 +11,12 @@
 
         public static MoneyBase Franc(int amount)
         {
-            return new Franc(amount);
+            return new Franc(amount,"CHF");
         }
 
         public static MoneyBase Dollar(int amount)
         {
-            return new Dollar(amount);
+            return new Dollar(amount,"USD");
         }
 
         public abstract MoneyBase Times(int multiplier);

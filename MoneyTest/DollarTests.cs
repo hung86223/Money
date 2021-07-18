@@ -22,9 +22,9 @@ namespace MoneyTest
         [Test]
         public void TestEquality()
         {
-            Assert.True(new Dollar(5).Equal(new Dollar(5)));
-            Assert.False(new Dollar(5).Equal(new Dollar(6)));
-            Assert.False(new Dollar(5).Equal(new Franc(5)));
+            Assert.True(MoneyBase.Dollar(5).Equal(MoneyBase.Dollar(5)));
+            Assert.False(MoneyBase.Dollar(5).Equal(MoneyBase.Dollar(6)));
+            Assert.False(MoneyBase.Dollar(5).Equal(MoneyBase.Franc(5)));
         }
         private void DollarShouldEqual(MoneyBase expected, MoneyBase product)
         {
