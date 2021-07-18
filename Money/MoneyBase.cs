@@ -35,5 +35,10 @@
         {
             return $"{nameof(Amount)}: {Amount}, {nameof(Currency)}: {Currency}";
         }
+
+        public MoneyBase Plus(MoneyBase addEnd)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

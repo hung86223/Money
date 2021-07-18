@@ -27,6 +27,14 @@ namespace MoneyTest
             Assert.False(MoneyBase.Dollar(5).Equal(MoneyBase.Franc(5)));
         }
 
+        [Test]
+        public void TestSimpleAddition()
+        {
+            var sum = MoneyBase.Dollar(5).Plus(MoneyBase.Dollar(5));
+
+            Assert.AreEqual(MoneyBase.Dollar(10),sum);
+        }
+
         private void DollarShouldEqual(MoneyBase expected, MoneyBase product)
         {
             expected.ToExpectedObject().ShouldEqual(product);
