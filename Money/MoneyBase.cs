@@ -6,7 +6,7 @@
 
         public bool Equal(MoneyBase money)
         {
-            return Amount == money.Amount;
+            return Amount == money.Amount && GetType() == money.GetType();
         }
 
         public static MoneyBase Franc(int amount)

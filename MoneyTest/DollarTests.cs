@@ -19,16 +19,16 @@ namespace MoneyTest
             DollarShouldEqual(MoneyBase.Dollar(15), five.Times(3));
         }
 
-        private void DollarShouldEqual(MoneyBase expected, MoneyBase product)
-        {
-            expected.ToExpectedObject().ShouldEqual(product);
-        }
-
         [Test]
         public void TestEquality()
         {
             Assert.True(new Dollar(5).Equal(new Dollar(5)));
             Assert.False(new Dollar(5).Equal(new Dollar(6)));
+            Assert.False(new Dollar(5).Equal(new Franc(5)));
+        }
+        private void DollarShouldEqual(MoneyBase expected, MoneyBase product)
+        {
+            expected.ToExpectedObject().ShouldEqual(product);
         }
     }
 }

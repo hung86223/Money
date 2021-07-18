@@ -20,6 +20,7 @@ namespace MoneyTest
         {
             Assert.True(new Franc(5).Equal(new Franc(5)));
             Assert.False(new Franc(5).Equal(new Franc(6)));
+            Assert.False(new Franc(5).Equal(new Dollar(5)));
         }
 
         private void FrancShouldEqual(MoneyBase expected, MoneyBase product)
