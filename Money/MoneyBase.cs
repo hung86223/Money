@@ -1,6 +1,11 @@
 ﻿namespace Money
 {
-    public  class MoneyBase
+    public interface IExpression
+    {
+        IExpression Plus(MoneyBase addEnd);
+    }
+
+    public  class MoneyBase : IExpression
     {
         protected int Amount;
         protected string Currency;
@@ -36,9 +41,9 @@
             return $"{nameof(Amount)}: {Amount}, {nameof(Currency)}: {Currency}";
         }
 
-        public MoneyBase Plus(MoneyBase addEnd)
+        public IExpression Plus(MoneyBase addEnd)
         {
-            return new(10, "USD");
+            return new MoneyBase(10, "USD");
         }
     }
 }

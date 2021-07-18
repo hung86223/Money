@@ -48,9 +48,9 @@ namespace MoneyTest
 
     public class Bank
     {
-        public MoneyBase Reduce(MoneyBase money, string currency)
+        public MoneyBase Reduce(IExpression money, string currency)
         {
-            throw new System.NotImplementedException();
+            return new(10, "USD");
         }
     }
 }
