@@ -45,10 +45,21 @@ namespace MoneyTest
         {
             var five = MoneyBase.Dollar(5);
             var result = five.Plus(five);
-            var sum = (Sum) result;
-    
-            MoneyShouldEqual(five,sum.Augend);
-            MoneyShouldEqual(five,sum.Addend);
+            var sum = (Sum)result;
+
+            MoneyShouldEqual(five, sum.Augend);
+            MoneyShouldEqual(five, sum.Addend);
+        }
+
+        [Test]
+        public void TestReduceSum()
+        {
+            var sum = new Sum(MoneyBase.Dollar(3),MoneyBase.Dollar(4) );
+            var bank = new Bank();
+
+            var actual = bank.Reduce(sum,"USD");
+
+            MoneyShouldEqual(MoneyBase.Dollar(7),actual);
         }
 
         private void MoneyShouldEqual(MoneyBase expected, MoneyBase actual)
