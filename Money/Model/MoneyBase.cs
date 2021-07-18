@@ -1,10 +1,5 @@
-﻿namespace Money
+﻿namespace Money.Model
 {
-    public interface IExpression
-    {
-        IExpression Plus(MoneyBase addEnd);
-    }
-
     public  class MoneyBase : IExpression
     {
         protected int Amount;
@@ -41,9 +36,9 @@
             return $"{nameof(Amount)}: {Amount}, {nameof(Currency)}: {Currency}";
         }
 
-        public IExpression Plus(MoneyBase addEnd)
+        public IExpression Plus(MoneyBase addend)
         {
-            return new MoneyBase(10, "USD");
+            return new Sum(this, addend);
         }
     }
 }

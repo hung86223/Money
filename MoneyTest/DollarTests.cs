@@ -1,5 +1,5 @@
 using ExpectedObjects;
-using Money;
+using Money.Model;
 using NUnit.Framework;
 
 namespace MoneyTest
@@ -40,17 +40,20 @@ namespace MoneyTest
             MoneyShouldEqual(expected, actual);
         }
 
+        [Test]
+        public void TestPlusReturnSum()
+        {
+            var five = MoneyBase.Dollar(5);
+            var result = five.Plus(five);
+            var sum = (Sum) result;
+    
+            MoneyShouldEqual(five,sum.Augend);
+            MoneyShouldEqual(five,sum.Addend);
+        }
+
         private void MoneyShouldEqual(MoneyBase expected, MoneyBase actual)
         {
             expected.ToExpectedObject().ShouldEqual(actual);
-        }
-    }
-
-    public class Bank
-    {
-        public MoneyBase Reduce(IExpression money, string currency)
-        {
-            return new(10, "USD");
         }
     }
 }

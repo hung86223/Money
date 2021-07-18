@@ -1,5 +1,6 @@
 ﻿using ExpectedObjects;
 using Money;
+using Money.Model;
 using NUnit.Framework;
 
 namespace MoneyTest
