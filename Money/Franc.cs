@@ -2,12 +2,8 @@
 {
     public class Franc:MoneyBase
     {
-        private string Currency;
-
-        public Franc(int amount, string currency)
+        public Franc(int amount, string currency) : base(amount,currency)
         {
-            Currency = currency;
-            Amount = amount;
         }
 
         public override MoneyBase Times(int multiplier)

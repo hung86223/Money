@@ -3,6 +3,13 @@
     public abstract class MoneyBase
     {
         protected int Amount;
+        protected string Currency;
+
+        protected MoneyBase(int amount, string currency)
+        {
+            Amount = amount;
+            Currency = currency;
+        }
 
         public bool Equal(MoneyBase money)
         {
