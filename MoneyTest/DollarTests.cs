@@ -11,6 +11,7 @@ namespace MoneyTest
         {
         }
 
+        [Ignore("use test different class equality to cover")]
         [Test]
         public void TestMultiplication()
         {
@@ -26,6 +27,13 @@ namespace MoneyTest
             Assert.False(MoneyBase.Dollar(5).Equal(MoneyBase.Dollar(6)));
             Assert.False(MoneyBase.Dollar(5).Equal(MoneyBase.Franc(5)));
         }
+
+        [Test]
+        public void TestDifferentClassEquality()
+        {
+            Assert.True(new MoneyBase(10,"USD").Equal(MoneyBase.Dollar(10)));
+        }
+
         private void DollarShouldEqual(MoneyBase expected, MoneyBase product)
         {
             expected.ToExpectedObject().ShouldEqual(product);

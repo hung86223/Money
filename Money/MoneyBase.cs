@@ -1,11 +1,11 @@
 ﻿namespace Money
 {
-    public abstract class MoneyBase
+    public  class MoneyBase
     {
         protected int Amount;
         protected string Currency;
 
-        protected MoneyBase(int amount, string currency)
+        public MoneyBase(int amount, string currency)
         {
             Amount = amount;
             Currency = currency;
@@ -13,7 +13,7 @@
 
         public bool Equal(MoneyBase money)
         {
-            return Amount == money.Amount && GetType() == money.GetType();
+            return Amount == money.Amount && Currency.Equals(money.Currency);
         }
 
         public static MoneyBase Franc(int amount)
@@ -26,6 +26,14 @@
             return new Dollar(amount,"USD");
         }
 
-        public abstract MoneyBase Times(int multiplier);
+        public MoneyBase Times(int multiplier)
+        {
+            return new (Amount * multiplier,Currency);
+        }
+
+        public override string ToString()
+        {
+            return $"{nameof(Amount)}: {Amount}, {nameof(Currency)}: {Currency}";
+        }
     }
 }
