@@ -15,8 +15,8 @@ namespace MoneyTest
         public void TestMultiplication()
         {
             var five = MoneyBase.Dollar(5);
-            DollarShouldEqual(MoneyBase.Dollar(10), five.Times(2));
-            DollarShouldEqual(MoneyBase.Dollar(15), five.Times(3));
+            MoneyShouldEqual(MoneyBase.Dollar(10), five.Times(2));
+            MoneyShouldEqual(MoneyBase.Dollar(15), five.Times(3));
         }
 
         [Test]
@@ -37,12 +37,12 @@ namespace MoneyTest
             var actual = bank.Reduce(sum, "USD");
 
             var expected = MoneyBase.Dollar(10);
-            expected.ToExpectedObject().ShouldEqual(actual);
+            MoneyShouldEqual(expected, actual);
         }
 
-        private void DollarShouldEqual(MoneyBase expected, MoneyBase product)
+        private void MoneyShouldEqual(MoneyBase expected, MoneyBase actual)
         {
-            expected.ToExpectedObject().ShouldEqual(product);
+            expected.ToExpectedObject().ShouldEqual(actual);
         }
     }
 
