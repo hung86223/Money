@@ -30,7 +30,11 @@ namespace MoneyTest
         [Test]
         public void TestSimpleAddition()
         {
-            var actual = MoneyBase.Dollar(5).Plus(MoneyBase.Dollar(5));
+            var five = MoneyBase.Dollar(5);
+            var sum = five.Plus(five);
+            var bank = new Bank();
+
+            var actual = bank.Reduce(sum, "USD");
 
             var expected = MoneyBase.Dollar(10);
             expected.ToExpectedObject().ShouldEqual(actual);
@@ -39,6 +43,14 @@ namespace MoneyTest
         private void DollarShouldEqual(MoneyBase expected, MoneyBase product)
         {
             expected.ToExpectedObject().ShouldEqual(product);
+        }
+    }
+
+    public class Bank
+    {
+        public MoneyBase Reduce(MoneyBase money, string currency)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
