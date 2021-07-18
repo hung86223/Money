@@ -30,9 +30,10 @@ namespace MoneyTest
         [Test]
         public void TestSimpleAddition()
         {
-            var sum = MoneyBase.Dollar(5).Plus(MoneyBase.Dollar(5));
+            var actual = MoneyBase.Dollar(5).Plus(MoneyBase.Dollar(5));
 
-            Assert.AreEqual(MoneyBase.Dollar(10),sum);
+            var expected = MoneyBase.Dollar(10);
+            expected.ToExpectedObject().ShouldEqual(actual);
         }
 
         private void DollarShouldEqual(MoneyBase expected, MoneyBase product)
