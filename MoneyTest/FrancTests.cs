@@ -7,7 +7,6 @@ namespace MoneyTest
     [TestFixture]
     public class FrancTests
     {
-        [Ignore("use test different class equality to cover")]
         [Test]
         public void TestMultiplication()
         {
@@ -22,12 +21,6 @@ namespace MoneyTest
             Assert.True(MoneyBase.Franc(5).Equal(MoneyBase.Franc(5)));
             Assert.False(MoneyBase.Franc(5).Equal(MoneyBase.Franc(6)));
             Assert.False(MoneyBase.Franc(5).Equal(MoneyBase.Dollar(5)));
-        }
-
-        [Test]
-        public void TestDifferentClassEquality()
-        {
-            Assert.True(new MoneyBase(10,"CHF").Equal(new Franc(10,"CHF")));
         }
 
         private void FrancShouldEqual(MoneyBase expected, MoneyBase product)

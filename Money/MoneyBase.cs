@@ -18,12 +18,12 @@
 
         public static MoneyBase Franc(int amount)
         {
-            return new Franc(amount,"CHF");
+            return new (amount,"CHF");
         }
 
         public static MoneyBase Dollar(int amount)
         {
-            return new Dollar(amount,"USD");
+            return new (amount,"USD");
         }
 
         public MoneyBase Times(int multiplier)
