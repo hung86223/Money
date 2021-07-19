@@ -2,8 +2,8 @@
 {
     public  class MoneyBase : IExpression
     {
-        protected int Amount;
-        protected string Currency;
+        public int Amount;
+        public string Currency;
 
         public MoneyBase(int amount, string currency)
         {
@@ -11,6 +11,7 @@
             Currency = currency;
         }
 
+        public string Test { get; set; }
         public bool Equal(MoneyBase money)
         {
             return Amount == money.Amount && Currency.Equals(money.Currency);

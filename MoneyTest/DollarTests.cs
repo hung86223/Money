@@ -59,7 +59,7 @@ namespace MoneyTest
 
             var actual = bank.Reduce(sum,"USD");
 
-            MoneyShouldEqual(MoneyBase.Dollar(7),actual);
+            MoneyShouldEqual(MoneyBase.Dollar(7),  actual);
         }
 
         private void MoneyShouldEqual(MoneyBase expected, MoneyBase actual)
