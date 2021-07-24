@@ -6,9 +6,12 @@ namespace MoneyTest
 {
     public class DollarTests
     {
+        private Bank _bank;
+
         [SetUp]
         public void Setup()
         {
+            _bank = new Bank();
         }
 
         [Test]
@@ -55,11 +58,18 @@ namespace MoneyTest
         public void TestReduceSum()
         {
             var sum = new Sum(MoneyBase.Dollar(3),MoneyBase.Dollar(4) );
-            var bank = new Bank();
 
-            var actual = bank.Reduce(sum,"USD");
+            var actual = _bank.Reduce(sum,"USD");
 
             MoneyShouldEqual(MoneyBase.Dollar(7),  actual);
+        }
+
+        [Test]
+        public void TestReduceMoney()
+        {
+            var actual = _bank.Reduce(MoneyBase.Dollar(1), "USD");
+
+            MoneyShouldEqual(MoneyBase.Dollar(1),actual);
         }
 
         private void MoneyShouldEqual(MoneyBase expected, MoneyBase actual)
