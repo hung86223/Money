@@ -41,5 +41,10 @@
         {
             return new Sum(this, addend);
         }
+
+        public MoneyBase Reduce(string toCurrency)
+        {
+            return this;
+        }
     }
 }
