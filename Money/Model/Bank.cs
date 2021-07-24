@@ -5,8 +5,7 @@ namespace Money.Model
         public MoneyBase Reduce(IExpression money, string toCurrency)
         {
             var sum = (Sum)money;
-            var amount = sum.Addend.Amount+sum.Augend.Amount;
-            return new MoneyBase(amount, toCurrency);
+            return sum.Reduce(toCurrency);
         }
     }
 }

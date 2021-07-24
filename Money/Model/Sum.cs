@@ -15,5 +15,11 @@ namespace Money.Model
         {
             throw new System.NotImplementedException();
         }
+
+        public MoneyBase Reduce(string toCurrency)
+        {
+            var amount = Addend.Amount + Augend.Amount;
+            return new MoneyBase(amount, toCurrency);
+        }
     }
 }
