@@ -2,9 +2,11 @@ namespace Money.Model
 {
     public class Bank
     {
-        public MoneyBase Reduce(IExpression money, string currency)
+        public MoneyBase Reduce(IExpression money, string toCurrency)
         {
-            return new(10, "USD");
+            var sum = (Sum)money;
+            var amount = sum.Addend.Amount+sum.Augend.Amount;
+            return new MoneyBase(amount, toCurrency);
         }
     }
 }
